@@ -22,6 +22,18 @@ const getFavLinks = (req, res) => {
   })
 }
 
+const createFavLink = (req, res) => {
+  let { name, URL } = req.body
+
+  pool.query('INSERT INTO favlinks (name, URL) VALUES ($1, $2)', [name, URL], (error, result) => {
+    if (error) {
+      throw error
+    }
+    res.status(200).send(`FavLink added`)
+  })
+}
+
 module.exports = {
-  getFavLinks
+  getFavLinks,
+  createFavLink
 }
