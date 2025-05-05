@@ -21,21 +21,7 @@ let favLinks = [
 // CRUD
 
 // Create
-app.post("/favlink", (req, res) => {
-  let name = req.body.name
-  let URL = req.body.URL
-
-  let newFavLink = { name, URL }
-
-  favLinks.push(newFavLink)
-
-  if (newFavLink) {
-    res.send("success")
-  }
-  else {
-    res.send("Error!")
-  }
-})
+app.post("/favlink", db.createFavLink)
 
 // Read
 app.get("/favlinks", db.getFavLinks)
