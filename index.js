@@ -4,7 +4,11 @@ const port = 8000
 
 const db = require('./queries')
 
+const cors = require('cors')
+
 app.use(express.json())
+
+app.use(cors())
 
 app.get("/", (req, res) => {
   res.send("Node / Express server is operational!")
