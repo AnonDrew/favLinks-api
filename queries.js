@@ -21,3 +21,7 @@ const getFavLinks = (req, res) => {
     }
   })
 }
+
+module.exports = {
+  getFavLinks
+}
