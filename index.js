@@ -2,6 +2,8 @@ const express = require('express')
 const app = express()
 const port = 3000
 
+const db = require('./queries')
+
 app.use(express.json())
 
 app.get("/", (req, res) => {
@@ -36,9 +38,7 @@ app.post("/favlink", (req, res) => {
 })
 
 // Read
-app.get("/favlinks", (req, res) => {
-  res.send(favLinks)
-})
+app.get("/favlinks", db.getFavLinks)
 
 // Update
 app.put("favlink", (req, res) => {
