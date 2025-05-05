@@ -16,7 +16,7 @@ const getFavLinks = (req, res) => {
       throw error
     }
     else {
-      console.log(result)
+      //console.log(result)
       res.status(200).json(result.rows)
     }
   })
