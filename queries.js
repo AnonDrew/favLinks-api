@@ -13,7 +13,7 @@ const pool = new Pool({
 const getFavLinks = (req, res) => {
   pool.query('SELECT * FROM favlinks', (error, result) => {
     if (error) {
-
+      throw error
     }
     else {
       console.log(result)
